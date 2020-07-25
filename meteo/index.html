@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="google-site-verification" content="EA5B-_uMG1CweSR0g11exA0j2hleCpSSxqkVa_DZQvM" />
+    <title>Meteo App</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" media="screen" />
+</head>
+
+<body>
+    <div id="overlay2"></div> 
+    <section class="welcome-page" id="welcome-page">
+        <header class="logo-block">
+            <img src="img/logo.svg" alt="logo sun" class="logo">
+            <h1>Meteo app</h1>
+        </header>
+        <section>
+            <img src="img/position.svg" alt="globe location" class="globe-img">
+            <div>
+                <p>Show weather according to your geolocation</p>
+                <button type="button" id="enable-location">Enable geolocation</button>
+            </div>
+        </section>
+        <!-- <p>or enter the city name</p>
+        <form action="">
+            <div>
+                <label for="city">City Name</label>
+                <input type="text" id="city">
+            </div>
+        </form> -->
+        <section class="loading-block hide" id="loading-block">
+            <img src="img/loading.svg" alt="loading image">
+            <p>Loading data</p>
+        </section>
+    </section>
+    <section class="nolocation-block hide" id="nolocation-block">
+        <h1 class="nolocation-title">Whoops...</h1>
+        <div class="nolocation-main">
+            <img src="img/sad_globe.png" alt="sad planet" class="nolocation-img">
+            <div class="nolocation-text">
+                <p>We really need your geolocation to show the weather of your region.<p>
+                <p>Could you allow your geolocation for this app manually in your browser please.</p>
+            </div>
+        </div>
+    </section>
+    <main class="hide">
+    <div id="overlay"></div>
+        <section>
+            <h2 id="cityName"></h2>
+            <h3 id="date"></h3>
+            <span class="main-block">
+                <div class="main-meteo">
+                    <img src="img/sun_icon.svg" alt="meteo icon" class="main-icon" id="main-icon">
+                    <p class="main-description" id="main-desription"></p>
+                    <p id="temperature"></p>
+                </div>
+                <span class="meteo-details-block">
+                    <div>
+                        <figure class="meteo-details">
+                            <img src="img/pressure_icon.svg" alt="pressure icon" class="details-icon">
+                            <figcaption id="pressure"></figcaption>
+                        </figure>
+                        <figure class="meteo-details">
+                            <img src="img/humidity_icon.svg" alt="preasure icon" class="details-icon">
+                            <figcaption id="humidity"></figcaption>
+                        </figure>
+                        <figure class="meteo-details">
+                            <img src="img/wind_icon.svg" alt="preasure icon" class="details-icon">
+                            <figcaption id="wind"></figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/sunset_icon.svg" alt="sunset image" class="details-icon">
+                            <figcaption id="sun-rise-set"></figcaption>
+                        </figure>
+                    </div>
+                </span>
+            </span>
+        </section>
+        <section class="slider" >
+                <button type="button" id="close-btn"></button>
+            <div class="hours-block">
+              <article class="hour">
+                <h3 id="1-hour"></h3>
+                <img src="img/sun_icon.svg" alt="meteo icon" class="weekday-icon" id="1-hour-icon">
+                <p id="1-hour-temp"></p>
+              </article>
+              <article class="hour">
+                    <h3 id="2-hour"></h3>
+                    <img src="img/sun_icon.svg" alt="meteo icon" class="weekday-icon" id="2-hour-icon">
+                    <p id="2-hour-temp"></p>
+              </article>
+              <article class="hour">
+                    <h3 id="3-hour"></h3>
+                    <img src="img/sun_icon.svg" alt="meteo icon" class="weekday-icon" id="3-hour-icon">
+                    <p id="3-hour-temp"></p>
+              </article>
+              <article class="hour">
+                    <h3 id="4-hour"></h3>
+                    <img src="img/sun_icon.svg" alt="meteo icon" class="weekday-icon" id="4-hour-icon">
+                    <p id="4-hour-temp"></p>
+              </article>
+              <article class="hour">
+                    <h3 id="5-hour"></h3>
+                    <img src="img/sun_icon.svg" alt="meteo icon" class="weekday-icon" id="5-hour-icon">
+                    <p id="5-hour-temp"></p>
+              </article>
+              <article class="hour">
+                    <h3 id="6-hour"></h3>
+                    <img src="img/sun_icon.svg" alt="meteo icon" class="weekday-icon" id="6-hour-icon">
+                    <p id="6-hour-temp"></p>
+              </article>
+              <article class="hour">
+                    <h3 id="7-hour"></h3>
+                    <img src="img/sun_icon.svg" alt="meteo icon" class="weekday-icon" id="7-hour-icon">
+                    <p id="7-hour-temp"></p>
+              </article>
+              <article class="hour">
+                    <h3 id="8-hour"></h3>
+                    <img src="img/sun_icon.svg" alt="meteo icon" class="weekday-icon" id="8-hour-icon">
+                    <p id="8-hour-temp"></p>
+              </article>
+            </div>
+        </section>
+        <section class="weekdays-block" id="weekdays-block">
+            <article class="weekday" id="today">
+                <h3 class="weekday-name" id="today-weekday-name">Today</h3>
+                <img src="img/sun_icon.svg" alt="meteo icon" class="weekday-icon" id="today-icon">
+                <p class="weekday-temp" id="today-temp"></p>
+            </article>
+            <article class="weekday n-weekday" id="1-weekday">
+                <h3 class="weekday-name" id="1-weekday-name"></h3>
+                <img src="img/cloud_icon.svg" alt="meteo icon" class="weekday-icon" id="1-weekday-icon">
+                <p class="weekday-temp" id="1-weekday-temp"></p>
+            </article>
+            <article class="weekday n-weekday" id="2-weekday">
+                <h3 class="weekday-name" id="2-weekday-name"></h3>
+                <img src="img/rain_icon.svg" alt="meteo icon" class="weekday-icon" id="2-weekday-icon">
+                <p class="weekday-temp" id="2-weekday-temp"></p>
+            </article>
+            <article class="weekday n-weekday" id="3-weekday">
+                <h3 class="weekday-name" id="3-weekday-name"></h3>
+                <img src="img/cloud_part_icon.svg" alt="meteo icon" class="weekday-icon" id="3-weekday-icon">
+                <p class="weekday-temp" id="3-weekday-temp"></p>
+            </article>
+            <article class="weekday n-weekday" id="4-weekday">
+                <h3 class="weekday-name" id="4-weekday-name"></h3>
+                <img src="img/sun_icon.svg" alt="meteo icon" class="weekday-icon" id="4-weekday-icon">
+                <p class="weekday-temp" id="4-weekday-temp"></p>
+            </article>
+            <article class="weekday n-weekday" id="5-weekday">
+                <h3 class="weekday-name" id="5-weekday-name"></h3>
+                <img src="img/sun_icon.svg" alt="meteo icon" class="weekday-icon" id="5-weekday-icon">
+                <p class="weekday-temp" id="5-weekday-temp"></p>
+            </article>
+        </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/DateHelper.js"></script>
+    <script src="js/WeatherApp.js"></script>    
+    <script src="js/main.js"></script>
+</body>
+
+</html>

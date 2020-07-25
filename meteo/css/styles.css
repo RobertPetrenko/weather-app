@@ -1,0 +1,409 @@
+* {
+    box-sizing: border-box;
+}
+    
+html {
+    color: #4D87A1;
+    font-family: 'Muli', sans-serif;
+    height:100%;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+main {
+    margin: auto;
+    padding: 1rem 0;
+    position: relative;
+    text-align: center;
+    width: 90%;
+}
+
+img {
+    height: auto;
+    max-width: 100%;  
+}
+
+button {
+    background-color: #4D87A1;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: .5rem;
+    width: 9rem;
+}
+
+figure {
+    margin: 1rem 0;
+}
+
+.welcome-page {
+    align-items: center;
+    animation: colorchange 20s infinite;
+    -webkit-animation: colorchange 20s infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+    height: 100vh;
+    margin: auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.logo-block {
+    display: flex;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px #87b5ca;;
+}
+
+.logo {
+    margin-right: 1rem;
+    width: 3rem;
+}
+
+.globe-img {
+    width: 75%;
+}
+
+
+@keyframes colorchange
+{
+    0%   {background: #D3DDEA;}
+    25%  {background: #DDD78D;}
+    50%  {background: #CEB5A7}
+    75%  {background: #C4B1AE;}
+    100% {background: #D3DDEA;}
+}
+
+@-webkit-keyframes colorchange 
+{
+    0%   {background: #D3DDEA;}
+    25%  {background: #DDD78D;}
+    50%  {background: #CEB5A7;}
+    75%  {background: #C4B1AE;}
+    100% {background: #D3DDEA;}
+}
+
+.loading-block {
+    background-color: #f9f2ef;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.main-block {
+    align-items: center;
+    border-top: solid 1px #D3DDEA;
+    border-bottom: solid 1px #D3DDEA;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.main-icon {
+    margin: auto;
+    width: 80%;
+}
+
+.main-meteo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+}
+
+.main-description {
+    font-size: 2rem;
+}
+
+.meteo-details-block {
+    display: flex;
+    margin-left: .5rem;
+    flex-direction: column;
+    flex-grow: 2;
+}
+
+.details-icon {
+    height: auto;
+    max-width: 30px;
+}
+
+.slider {
+    height: 0px;
+    overflow: hidden;
+    transition:         height 1s ease;
+    -moz-transition:    height 1s ease;
+    -ms-transition:     height 1s ease;
+    -o-transition:      height 1s ease;
+    -webkit-transition: height 1s ease;
+}
+
+.slided {
+    background-color: #f2f7fd;
+    border-radius: 10px;
+    height: max-content;
+    left: 50%;
+    padding: 0 .5rem 1.5rem 2rem;
+    position: absolute;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+.hours-block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.hour {
+    border-bottom: solid 1px #D3DDEA; 
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.weekdays-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.weekday {
+    background-image: url(../img/more.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: right 1px top 20px;
+    border-bottom: solid 1px #D3DDEA;
+    display: flex;
+    justify-content: space-between;
+}
+
+.weekday-name {
+    flex-basis: 40%;
+}
+
+.weekday-icon {
+    flex-basis: 30%;
+    max-width: 10%;
+    margin: .5rem;
+}
+
+.weekday-temp {
+    flex-basis: 30%;
+    padding-right: 30px;
+}
+
+.more-icon {
+    margin: 0 1rem;
+    width: 20px;
+}
+
+.nolocation-block {
+    animation: colorchange 20s infinite;
+    -webkit-animation: colorchange 20s infinite;
+    height: 100vh;
+    text-align: center; 
+}
+
+ .nolocation-title {
+    font-size: 3rem;
+    margin: 0;
+    padding: 5rem 0 2rem;
+}
+
+.nolocation-main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.nolocation-text {
+    width: 90%;
+}
+
+.nolocation-img {
+    max-width: 250px;
+}
+
+.hide {
+    display: none;
+}
+
+#temperature {
+    font-size: 2rem;
+}
+
+#close-btn {
+    background-image: url(../img/close.svg);
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    float: right;
+    height: 30px;
+    margin: 10px 0;
+    width: 30px;
+}
+
+#overlay,
+#overlay2 {
+    background-color: rgba(0,0,0,0.5); 
+    bottom: 0;    
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;  
+}
+
+@media screen and (min-width: 500px) {
+    .weekday-temp {
+        padding-right: 0;
+    }
+}  
+
+@media screen and (min-width: 800px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .logo-block {
+        font-size: 2rem;
+    }
+
+    .logo {
+        margin-right: 2rem;
+        width: 4rem;
+    }
+
+    .main-block {
+        padding: 2rem 0;
+    }
+
+    .main-icon {
+        max-width: 300px;
+    }
+
+    .meteo-details-block {
+        width: 30%;
+    }
+
+    .details-icon {
+        max-width: 45px;
+    }
+
+    .slided {
+        height: 200px;
+        padding: .5rem;
+        padding-left: 1.5rem;
+        position: initial;
+        transform: none;
+        width: 100%;
+    }
+
+    .weekdays-block,
+    .hours-block {
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 1rem;
+    }
+
+    .weekday {
+        background-image: url(../img/more_desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: right -2px top 7px;
+        border-bottom: none;
+        cursor: pointer;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .weekday:not(:last-child) {
+        border-right: solid 1.5px #D3DDEA;
+    }
+
+    .weekday-name {
+        flex-basis: auto;
+    }
+
+    .weekday-icon {
+        margin: auto;
+        max-width: 65px;
+        flex-basis: auto;
+    }
+
+    .weekday-temp {
+        flex-basis: auto;
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+
+    .more-icon {
+        transform: rotate(90deg);
+    }
+
+    .hours-block {
+        margin: 0;
+    }
+
+    .hour {
+        border-bottom: none;
+        text-align: center;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .hour:not(:last-child) {
+        border-right: solid 1.5px #D3DDEA;
+    } 
+
+    .nolocation-img {
+        max-width: 300px;
+        margin: 1rem;
+    }
+
+    .nolocation-title {
+        font-size: 3rem;
+        margin: 0;
+        padding: 5rem;
+    }
+
+    .nolocation-main {
+        flex-direction: row;
+    }
+
+    .nolocation-text {
+        width: 60%;
+        font-size: 2rem;
+    }
+
+    #temperature {
+        font-size: 4rem;
+        margin: 1rem;
+    }
+
+    #overlay {
+        height: 0;
+        width: 0;
+    }
+
+    #close-btn {
+        margin: 0;
+    }
+  }
+
+@media screen and (min-width: 1000px) {
+    .weekday-name {
+        font-size: 1.5rem;
+    }
+
+    .nolocation-img {
+        max-width: 300px;
+        margin: 1rem;
+    }
+}
+
